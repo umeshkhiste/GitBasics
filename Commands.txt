@@ -163,8 +163,11 @@ $ git checkout master/new_branch_name
 $ git merge "new branch name"// this will merge new branch into old branch
 
 // This will push the repository / file into github
+// whenever you change some changes into some files and you want to push into 
+github use below command
 $ git push origin master(branch_name) // Most of the times branch name is master
 //Before you push branch into github,  you must need to create a new repository.
+
 $ git push origin branch_name:new_branch_name // This will create clone of the 
 branch_name and increase counter of branches with 1
 
