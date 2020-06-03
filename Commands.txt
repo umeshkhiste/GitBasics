@@ -1,0 +1,181 @@
+GitHub is nothing but just a website who host a repositories.
+
+At very first time when we start using git, we need to provide / configure our 
+
+Author: Who created the file
+Commit/Commitor: Who made the changes into the file
+
+To select editor in git use below command:
+$ git config --global core.editor "editor name" //e.g. emacs / vim
+
+User Name:
+1)$ git config --global user.name "username" // Use double codes
+// to see the user name use below command
+$ git config user.name
+Email:
+2) $ git config --global user.email "email id" // Use double codes
+// to see the email id use below command
+$ git config user.email
+
+To get all files / directories list after given user name and email id:
+1) $ git config --list
+
+To check status of repository at first time or once you make any changes in to repository:
+1) $ git status
+
+---------------------------------------------------------------------------------------------------------------------
+How to initiate a repository :
+1)$ git init
+// hidden folder of .git is created once you execute above command
+// Branch is bydefault master
+
+all files gets into stagging area and if  folder is in untrack area use this command:
+$ git add --a
+
+If you want to push particular file into stagging area use below command:
+$ git add filaname
+---------------------------------------------------------------------------------------------------------------------
+To see present working directory:
+$ pwd(hit enter)
+
+To list content / to show files from a repository
+$ ls(hit enter)
+
+To change working directory
+$ cd directory_name (hit enter)
+---------------------------------------------------------------------------------------------------------------------
+To generate blank file in git:
+$ touch filename.log
+
+To ignore particular file or directory use below command:
+$ touch .gitignore
+
+Once gitignore file created you can write file names which you want to ignore from your working directory
+And if you want to ignore complete folder from your working directory, 
+$ write folder name and / in .gitignore file
+
+---------------------------------------------------------------------------------------------------------------------
+To finilize the changes which is made recently in the file:
+1)$ git commit -m "message you want to show"
+
+Just to get overlook, what changes made in the file:
+1)$ git log
+
+If log is very long and want to quite then:
+press q
+
+---------------------------------------------------------------------------------------------------------------------
+To make clone/copy of any repository
+$ git clone paste_copied_url/path
+
+To add all changes into file
+1) $ git add . / -A / -u(generally we use . )
+---------------------------------------------------------------------------------------------------------------------
+To track difference between same file available at stagging area and working directory:
+$ git diff
+
+If you want to check difference between previous commit and stagging area:
+$ git diff --staged 
+---------------------------------------------------------------------------------------------------------------------
+Skipped stagging area and direct commit using below command :
+$ git commit -a -m "Direct commit"
+Note: Untracked file(git add filename) would not go into commit
+
+If you want to untracked any file from any directory:
+$ git rm --cached filename
+---------------------------------------------------------------------------------------------------------------------
+To remove file using git use below command:
+$ git rm filename
+You can then commit
+or
+Use below command to force remove:
+$ git rm -f filename
+You can then commit
+---------------------------------------------------------------------------------------------------------------------
+You can rename file using below command:
+$ git mv filename.extension newfilename.extension
+---------------------------------------------------------------------------------------------------------------------
+Below command shows what actually remove and what commit
+$git log -p
+$git log -p -n(-n shows number of commends)
+$git log --stat(display summary of difference or change been made to the file or folder)
+$git log --pretty=oneline(display all commit in one line)
+$git log --pretty=short(show all commit in short)
+$git log --pretty=full(Show all commit in details)
+$git log --since=2.days(shows all commits from last 2 days)
+$git log --since=2.weeks(shows all commits from last 2 weeks)
+$git log --since=2.months(shows all commits from last 2 months)
+$git log --since=2.years(shows all commits from last 2 years)
+$git log --pretty=format:"%h -- %ae"(shows comment and author email in given double code format)
+---------------------------------------------------------------------------------------------------------------------
+To change the commend use below command:
+$ git commit --amend
+(New editor will gets open)
+Type the commend and 
+then press Escape button
+then type Colon
+then type wq
+
+Now to check the changes use below command:
+$ git log -p -1
+---------------------------------------------------------------------------------------------------------------------
+To make any file unstaged use below command
+$ git restore --staged filename
+
+To delete all current changes and restore previous commit use below command
+$ git checkout filename
+
+If you modified more than one file and want to restore them all at a time
+$ git checkout -f
+
+This will restore the file where the last commit done 
+// That means if something gets deleted by mistake and then you used below command
+then that deleted part gets restore
+(Only condition is that you do not make use of "git add ." command
+other wise this will not work)
+
+$ git checkout --filename
+
+And then to see changes use below command
+$ git status (It will show working directory clean message)
+---------------------------------------------------------------------------------------------------------------------
+Remote Repository
+$ git remote add origin git@github.com:umeshkhiste/GitHub-Study.git
+---------------------------------------------------------------------------------------------------------------------
+If you want to make command in short:
+$ git config --global alias.st status
+$ git config --global alias.ct commit
+---------------------------------------------------------------------------------------------------------------------
+To create new branch in github:
+$ git branch // It will show you current branch available in repository
+$ git branch 'branch-name'
+$ git checkout -b new_branch_name(This will create copy of old branch/ folder)
+(-b we can use only when we dont have that branch already or to create a new one)
+
+Just commit before shifting between branches:
+You can use direct commit/omitting stagging area(git add .):
+$ git commit -a -m "comment here"
+
+Now if you want to move to old master branch / shift between branches
+$ git checkout master/new_branch_name
+---------------------------------------------------------------------------------------------------------------------
+// After this command old branch and new branch will become same
+$ git merge "new branch name"// this will merge new branch into old branch
+
+// This will push the repository / file into github
+$ git push origin 'old branch/file name' // Most of the times branch name is master
+$ git push origin branch_name:new_branch_name // This will create clone of the 
+branch_name and increase counter of branches with 1
+(But in git bash when you try to see status with $ git status, it will show only 
+previous branches and not the cloned branch)
+---------------------------------------------------------------------------------------------------------------------
+To delete newly created branch from the local system once changes has been done:
+$ git branch -d 'new branch name' // Gives error message if new branch was not merge
+$ git branch -D 'new branch name' // delete branch without giving any error message
+
+To delete newly created branch from the github:
+1)$ git push origin --delete 'branch name'
+
+If you want to remove repository as git repository:
+$ rm -rf .git
+---------------------------------------------------------------------------------------------------------------------

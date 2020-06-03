@@ -1,0 +1,5 @@
+*.bmp
+tensorflow/
+/dir/
+static/dir
+mycontacts.xlsx
