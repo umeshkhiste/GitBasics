@@ -166,6 +166,7 @@ $ git merge "new branch name"// this will merge new branch into old branch
 $ git push origin 'old branch/file name' // Most of the times branch name is master
 $ git push origin branch_name:new_branch_name // This will create clone of the 
 branch_name and increase counter of branches with 1
+
 (But in git bash when you try to see status with $ git status, it will show only 
 previous branches and not the cloned branch)
 ---------------------------------------------------------------------------------------------------------------------
